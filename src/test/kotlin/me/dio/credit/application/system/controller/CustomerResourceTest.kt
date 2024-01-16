@@ -58,13 +58,13 @@ class CustomerResourceTest {
         .content(valueAsString)
     )
       .andExpect(MockMvcResultMatchers.status().isCreated)
-      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Cami"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Cavalcante"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Gabriel"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Franca"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("28475934625"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("camila@email.com"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("gabriel@email.com"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000.0"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("000000"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua da Cami, 123"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua do gabriel, 123"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
       .andDo(MockMvcResultHandlers.print())
   }
@@ -129,13 +129,13 @@ class CustomerResourceTest {
         .accept(MediaType.APPLICATION_JSON)
     )
       .andExpect(MockMvcResultMatchers.status().isOk)
-      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Cami"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Cavalcante"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Gabriel"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Franca"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("28475934625"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("camila@email.com"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("gabriel@email.com"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000.0"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("000000"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua da Cami, 123"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua do Gabriel, 123"))
       //.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
       .andDo(MockMvcResultHandlers.print())
   }
@@ -143,7 +143,7 @@ class CustomerResourceTest {
   @Test
   fun `should not find customer with invalid id and return 400 status`() {
     //given
-    val invalidId: Long = 2L
+    val invalidId = 2L
     //when
     //then
     mockMvc.perform(
@@ -212,10 +212,10 @@ class CustomerResourceTest {
         .content(valueAsString)
     )
       .andExpect(MockMvcResultMatchers.status().isOk)
-      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("CamiUpdate"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("CavalcanteUpdate"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("GabrielUpdate"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("FrancaUpdate"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("28475934625"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("camila@email.com"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("gabriel@email.com"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("5000.0"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("45656"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua Updated"))
@@ -250,14 +250,14 @@ class CustomerResourceTest {
 
 
   private fun builderCustomerDto(
-    firstName: String = "Cami",
-    lastName: String = "Cavalcante",
+    firstName: String = "Gabriel",
+    lastName: String = "Franca",
     cpf: String = "28475934625",
-    email: String = "camila@email.com",
+    email: String = "gabriel@email.com",
     income: BigDecimal = BigDecimal.valueOf(1000.0),
     password: String = "1234",
     zipCode: String = "000000",
-    street: String = "Rua da Cami, 123",
+    street: String = "Rua do gabriel, 123",
   ) = CustomerDto(
     firstName = firstName,
     lastName = lastName,
@@ -270,8 +270,8 @@ class CustomerResourceTest {
   )
 
   private fun builderCustomerUpdateDto(
-    firstName: String = "CamiUpdate",
-    lastName: String = "CavalcanteUpdate",
+    firstName: String = "GabrielUpdate",
+    lastName: String = "FrancaUpdate",
     income: BigDecimal = BigDecimal.valueOf(5000.0),
     zipCode: String = "45656",
     street: String = "Rua Updated"

@@ -15,7 +15,6 @@ import me.dio.credit.application.system.service.impl.CustomerService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.springframework.test.context.ActiveProfiles
 import java.math.BigDecimal
 import java.util.*
 
@@ -83,13 +82,13 @@ class CustomerServiceTest {
 
   companion object {
     fun buildCustomer(
-      firstName: String = "Cami",
-      lastName: String = "Cavalcante",
+      firstName: String = "Gabri",
+      lastName: String = "Franca",
       cpf: String = "28475934625",
-      email: String = "camila@gmail.com",
+      email: String = "gabrielbfranca@gmail.com",
       password: String = "12345",
       zipCode: String = "12345",
-      street: String = "Rua da Cami",
+      street: String = "Rua do Gabriel",
       income: BigDecimal = BigDecimal.valueOf(1000.0),
       id: Long = 1L
     ) = Customer(

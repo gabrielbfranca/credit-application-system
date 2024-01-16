@@ -53,7 +53,7 @@ class CreditRepositoryTest {
   @Test
   fun `should find all credits by customer id`() {
     //given
-    val customerId: Long =  1L
+    val customerId =  1L
     //when
     val creditList: List<Credit> = creditRepository.findAllByCustomerId(customerId)
     //then
@@ -74,13 +74,13 @@ class CreditRepositoryTest {
     customer = customer
   )
   private fun buildCustomer(
-    firstName: String = "Cami",
-    lastName: String = "Cavalcante",
+    firstName: String = "Gabriel",
+    lastName: String = "Franca",
     cpf: String = "28475934625",
-    email: String = "camila@gmail.com",
+    email: String = "gabriel@gmail.com",
     password: String = "12345",
     zipCode: String = "12345",
-    street: String = "Rua da Cami",
+    street: String = "Rua do gabriel",
     income: BigDecimal = BigDecimal.valueOf(1000.0),
   ) = Customer(
     firstName = firstName,
